@@ -1,0 +1,58 @@
+/* 
+==================
+   GOOGLE FONTS
+==================
+*/
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+/* 
+==================
+   FONT AWESOME
+==================
+*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+/* 
+==================
+   VARIABLES
+==================
+*/
+:root {
+  --main-color: #16a085;
+  --red: #eb4d4b;
+  --orange: #f39c12;
+  --black: #130f40;
+  --light-color: #999;
+  --light-bg: #eee;
+  --white: #fff;
+  --body-font: "Comfortaa", cursive;
+  --border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+/* 
+==================
+   BASE
+==================
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  border: none;
+}
+html {
+  scrollbar-color: var(--main-color) var(--black);
+  scrollbar-width: thin;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+body {
+  font-family: var(--body-font);
+  background-color: var(--light-bg);
+  padding-bottom: 8rem;
+}
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
