@@ -1,19 +1,19 @@
 /* 
-==================
-   GOOGLE FONTS
-==================
+* ==================
+*    GOOGLE FONTS
+* ==================
 */
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
 /* 
-==================
-   FONT AWESOME
-==================
+*==================
+*   FONT AWESOME
+*==================
 */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
 /* 
-==================
-   VARIABLES
-==================
+* ==================
+*    VARIABLES
+* ==================
 */
 :root {
   --main-color: #16a085;
@@ -28,9 +28,9 @@
   --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 /* 
-==================
-   BASE
-==================
+* ==================
+*    BASE
+* ==================
 */
 * {
   padding: 0;
@@ -39,6 +39,7 @@
   outline: none;
   text-decoration: none;
   border: none;
+  list-style: none;
 }
 html {
   scrollbar-color: var(--main-color) var(--black);
@@ -55,4 +56,151 @@ section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+}
+/* 
+* ==================
+*     HEADER 
+* ==================
+*/
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  border-bottom: var(--border);
+}
+.header h1 {
+  font-size: 2.5rem;
+  color: var(--black);
+  text-transform: capitalize;
+}
+.empty {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  border: var(--border);
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--red);
+  text-align: center;
+  width: 100%;
+  box-shadow: var(--box-shadow);
+}
+.btn,
+.delete-btn,
+.option-btn {
+  display: block;
+  width: 100%;
+}
+
+.inline-btn,
+.inline-delete-btn,
+.inline-option-btn {
+  display: inline-block;
+}
+
+.btn,
+.delete-btn,
+.option-btn,
+.inline-btn,
+.inline-delete-btn,
+.inline-option-btn {
+  margin-top: 1rem;
+  text-align: center;
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  border-radius: 0.5rem;
+  border: var(--border);
+  color: var(--white);
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.btn,
+.inline-btn {
+  background-color: var(--main-color);
+}
+
+.delete-btn,
+.inline-delete-btn {
+  background-color: var(--red);
+}
+
+.option-btn,
+.inline-option-btn {
+  background-color: var(--orange);
+}
+
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover,
+.inline-btn:hover,
+.inline-delete-btn:hover,
+.inline-option-btn:hover {
+  background-color: var(--black);
+}
+.flex-btn {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--black);
+  z-index: 1000;
+}
+.header .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.header .flex .logo {
+  font-size: 2.5rem;
+  color: var(--orange);
+}
+.header .flex .navbar #user-btn,
+.header .flex .navbar a {
+  height: 4.2rem;
+  width: 4.5rem;
+  line-height: 4.2rem;
+  font-size: 2rem;
+  color: var(--black);
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.header .flex .navbar #user-btn:hover,
+.header .flex .navbar a:hover {
+  background-color: var(--main-color);
+  color: var(--white);
+}
+
+/* media queries  */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .view-post .row .col .image {
+    height: 20rem;
+  }
 }
