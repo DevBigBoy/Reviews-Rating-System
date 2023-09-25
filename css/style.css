@@ -187,6 +187,72 @@ section {
   color: var(--white);
 }
 
+.account-form form {
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+.account-form form h3 {
+  padding-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--black);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.account-form form p {
+  text-transform: capitalize;
+  padding-top: 1rem;
+  font-size: 1.6rem;
+  color: var(--light-color);
+}
+
+.account-form form p span {
+  color: var(--red);
+}
+
+.account-form form .box {
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1.4rem;
+  font-size: 1.8rem;
+  color: var(--black);
+  background-color: var(--light-bg);
+  margin: 1rem 0;
+}
+
+.account-form form textarea {
+  height: 15rem;
+  resize: none;
+}
+.account-form form .image {
+  height: 20rem;
+  width: 100%;
+  object-fit: contain;
+  margin-top: 0.5rem;
+}
+
+.account-form form .link {
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--light-color);
+}
+
+.account-form form .link a {
+  color: var(--red);
+  transition: 0.2s;
+}
+
+.account-form form .link a:hover {
+  text-decoration: underline;
+}
+
 /* media queries  */
 
 @media (max-width: 991px) {
