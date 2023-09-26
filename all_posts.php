@@ -23,7 +23,7 @@
     <?php  include 'components/header.php' ;?>
     <!--================= HEADER Start =================-->
 
-
+    <h1>posts</h1>
 
     <!--====================== sweetalert ======================-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
