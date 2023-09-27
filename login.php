@@ -5,18 +5,18 @@
     $email = $_POST['email'];
     $pass = $_POST['pass'];
 
-    $verify_email = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
+    $verify_email = $conn->prepare("SELECT * FROM `users` WHERE email = ? LIMIT 1");
     $verify_email->execute([$email]);
 
     if ($verify_email->rowCount() > 0) {
         $fetch = $verify_email->fetch(PDO::FETCH_ASSOC);
-        $verfiy_pass = password_verify($pass, $fetch['password']);
+        $verify_pass = password_verify($pass, $fetch['password']);
         
-        if($verfiy_pass == 1){
+        if($verify_pass == 1){
             setcookie('user_id', $fetch['id'], time() + 60*60*24*30, '/');
             header('location: all_posts.php');
 
-        }else{
+        } else {
             $warning_msg[] = 'Incorrect password!';
         }
     } else {
