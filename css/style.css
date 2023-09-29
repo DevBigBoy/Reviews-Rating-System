@@ -57,6 +57,10 @@ section {
   margin: 0 auto;
   padding: 2rem;
 }
+img {
+  width: 100%;
+  height: auto;
+}
 /* 
 * ==================
 *     HEADER 
@@ -265,7 +269,6 @@ section {
 }
 .account-form form .image {
   height: 20rem;
-  width: 100%;
   object-fit: contain;
   margin-top: 0.5rem;
 }
@@ -284,6 +287,128 @@ section {
 
 .account-form form .link a:hover {
   text-decoration: underline;
+}
+
+/* 
+* ==================
+*     POSTS 
+* ==================
+*/
+.all-posts .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 35rem);
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+.all-posts .box-container .box {
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  border: var(--border);
+  overflow-x: hidden;
+}
+.all-posts .box-container .box .image {
+  height: 20rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+.all-posts .box-container .box .title {
+  font-size: 2rem;
+  color: var(--black);
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+.all-posts .box-container .box .total-reviews {
+  font-size: 1.7rem;
+  padding: 1rem 0;
+}
+.all-posts .box-container .box .total-reviews i {
+  color: var(--orange);
+}
+
+.all-posts .box-container .box .total-reviews span {
+  color: var(--light-color);
+}
+/* 
+* ==================
+*    view Posts 
+* ==================
+*/
+
+.view-post .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.view-post .row .col {
+  flex: 1 1 40rem;
+}
+
+.view-post .row .col .image {
+  width: 100%;
+  height: 30rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.view-post .row .col .title {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.view-post .row .col .flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.view-post .row .col .flex .total-reviews {
+  text-align: center;
+}
+
+.view-post .row .col .flex .total-reviews h3 {
+  font-size: 7rem;
+  color: var(--black);
+}
+
+.view-post .row .col .flex .total-reviews i {
+  font-size: 3rem;
+}
+
+.view-post .row .col .flex .total-reviews p {
+  font-size: 1.8rem;
+  color: var(--light-color);
+  padding-top: 1rem;
+}
+
+.view-post .row .col .flex .total-ratings {
+  font-size: 2rem;
+}
+
+.view-post .row .col .flex .total-ratings p {
+  padding: 0.3rem 0;
+}
+
+.view-post .row .col .flex .total-ratings p i {
+  color: var(--orange);
+}
+
+.view-post .row .col .flex .total-ratings p span {
+  color: var(--light-color);
 }
 
 /* media queries  */

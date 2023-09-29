@@ -1,4 +1,5 @@
 <?php
+
  include 'components/connect.php';
 
 ?>
@@ -11,24 +12,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Posts</title>
 
-    <!--=================== Custom CSS=================== -->
+    <!--=================== Custom CSS ===================-->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
-
-
     <!--================= HEADER Start =================-->
     <?php  include 'components/header.php' ;?>
     <!--================= HEADER Start =================-->
 
-    <h1>posts</h1>
+    <!--================== all posts start ==================-->
+    <section class="all-posts">
+        <div class="heading">
+            <h1>all posts</h1>
+        </div>
+
+        <div class="box-container">
+            <?php
+                $select_posts = $conn->prepare("SELECT * FROM posts ORDER BY `created_at`");
+                $select_posts->execute();
+
+                if($select_posts->rowCount() > 0){
+                    while ($fetch_post = $select_posts->fetch(PDO::FETCH_ASSOC)) {
+                        $post_id = $fetch_post['id'];
+                        
+                        $count_reviews = $conn->prepare("SELECT * FROM `reviews` WHERE post_id = ?");
+                        $count_reviews->execute([$post_id]);
+                        $total_reviews = $count_reviews->rowCount();
+            ?>
+            <div class="box">
+                <img src="upload/<?= $fetch_post['image']; ?>" alt="" class="image">
+
+                <h3 class="title"><?= $fetch_post['title']?></h3>
+
+                <p class="total-reviews"><i class="fas fa-star"></i> <span><?= $total_reviews; ?></span></p>
+
+                <a href="view_post.php?get_id=<?= $post_id; ?>" class="inline-btn">view post</a>
+            </div>
+            <?php
+                    }
+                } else {
+                    echo '<p class="empty">no posts added yet!</p>';
+                }
+            ?>
+        </div>
+    </section>
+    <!--================== all posts End ==================-->
+
 
     <!--====================== sweetalert ======================-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-
-
 
     <!--====================== custome js ======================-->
     <script src="./js/script.js"></script>
